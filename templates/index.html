@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+<div class=".navbar-lg custom-nav">
+    <h1 class="heading">Glorious <span class="red">R</span><span class="green">G</span><span class="blue">B</span></h1>
+</div>
+
+{% endblock %}
+
+{% block body %}
+
+<!-- <div class="container">
+    <div class="row">
+        <form action="#" method="post"></form>
+    </div>
+</div> -->
+
+{% endblock %}
+
+{% block second_body %}
+
+<div class="main-box">
+    <div class="container">
+        <div class="row">
+            <div class="col box">
+                    <!-- iro.js picker div -->
+                    <div id="picker"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- calls function to set hex value from inital value on serverside -->
+<script type="text/javascript">
+    setInitialHexValue("{{RGBHex}}")
+</script>
+
+{% endblock %}
+
+{% block footer %}
+
+<div class="footer-box fixed-bottom">
+    <div class="container">
+        <div class="row">
+            <p class="creator">Created by Yomi</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

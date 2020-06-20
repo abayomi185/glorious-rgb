@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glorious-RGB</title>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/bootstrap.css')   }}">
+    <!-- The double curly brace is used to indicate string and a flask method use_for is
+    used to access the file; bootstrap.css -->
+    <!-- stylesheet css -->
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/style.css')   }}">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    {% block head %}{% endblock %}
+    <!--Jinja template engine-->
+</head>
+
+<body>
+    {% block body %}{% endblock %}
+
+    <!-- jquery -->
+    <script src="{{  url_for('static', filename='node_modules/jquery/dist/jquery.js')   }}"></script>
+    <!-- bootstrap js -->
+    <script src="{{  url_for('static', filename='js/bootstrap.js')   }}"></script>
+    <!-- iro.js color-picker js -->
+    <script src="{{  url_for('static', filename='node_modules/@jaames/iro/dist/iro.js')   }}"></script>
+    <!-- rgb js -->
+    <script src="{{  url_for('static', filename='js/rgb.js')   }}"></script>
+
+    {% block second_body %}{% endblock %}
+
+</body>
+
+<footer>
+    {% block footer %}{% endblock %}
+</footer>
+
+</html>
