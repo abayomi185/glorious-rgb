@@ -1,5 +1,7 @@
 from flask import Flask, escape, request, redirect, render_template
+#from os import path
 from datetime import datetime
+import os.path
 import pigpio
 import time
 import json
@@ -17,6 +19,11 @@ PWM_BLUE=13
 
 pi = pigpio.pi()
 
+#base_path = os.path(__file__).parent
+# base_path = os.path.relpath(__file__)
+# save_path = (base_path / "save.json").resolve()
+save_path = os.path.relpath("./save.json")
+
 gloriousRGBHex = "#FFFFFF"
 
 hex_dict = {"color": ""}
@@ -25,12 +32,12 @@ hex_dict = {"color": ""}
 
 def saveToJSON():
     hex_dict["color"] = gloriousRGBHex
-    with open('save.json', 'w') as jsonfile:
+    with open(save_path, 'w') as jsonfile:
         json.dump(hex_dict, jsonfile)
 
 def retrieveFromJSON():
     global gloriousRGBHex
-    with open('save.json') as json_file:
+    with open(save_path) as json_file:
         hex_dict = json.load(json_file)
     gloriousRGBHex = hex_dict["color"]
 
@@ -50,6 +57,8 @@ def enableGloriousRGB(colour):
 # Functiom call
 # Retrieves color hex from json file at launch
 retrieveFromJSON()
+rgbValue = convertHexToRGB(gloriousRGBHex)
+enableGloriousRGB(rgbValue)
 
 ########################################### Flask Section ########################################### 
 @app.route('/', methods=['POST', 'GET'])
