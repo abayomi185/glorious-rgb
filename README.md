@@ -1,6 +1,6 @@
 # Glorious-RGB
 
-![Glorious RGB web app](https://github.com/abayomi185/glorious-rgb/blob/master/showcase.jpg?raw=true)
+![Glorious RGB web app](https://github.com/abayomi185/glorious-rgb/blob/master/showcase.jpg?raw=true width="250")
 
 More details available on [Yomi's Blog](yomis.blog/glorious-rgb)
 
